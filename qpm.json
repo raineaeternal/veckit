@@ -4,12 +4,12 @@
   "sharedDir": "shared",
   "dependenciesDir": "extern",
   "info": {
-    "name": "Darth Maul Rust",
-    "id": "darth_maul_rust",
-    "version": "0.1.0",
+    "name": "veckit",
+    "id": "veckit",
+    "version": "0.0.1",
     "url": null,
     "additionalData": {
-      "overrideSoName": "libdarth_maul_rust.so",
+      "overrideSoName": "libveckit.so",
       "cmake": false
     }
   },
@@ -18,44 +18,24 @@
       "build": [
         "cargo ndk --link-builtins -t arm64-v8a -o ./build build --release"
       ],
-      "dev": [
-        "cargo ndk --link-builtins -t arm64-v8a -o ./build/debug build"
-      ],
-      "copy": [
-        "pwsh ./scripts/copy.ps1"
-      ],
-      "cpp": [
-        "pwsh ./scripts/make_compile_db.ps1"
-      ],
-      "ndk-stack": [
-        "pwsh ./scripts/ndk-stack.ps1"
-      ]
+      "dev": ["cargo ndk --link-builtins -t arm64-v8a -o ./build/debug build"],
+      "copy": ["pwsh ./scripts/copy.ps1"],
+      "cpp": ["pwsh ./scripts/make_compile_db.ps1"],
+      "ndk-stack": ["pwsh ./scripts/ndk-stack.ps1"]
     },
     "ndk": "^27.2.12479018",
-    "qmodIncludeDirs": [
-      "build/arm64-v8a"
-    ],
+    "qmodIncludeDirs": ["build/arm64-v8a"],
     "qmodIncludeFiles": [],
-    "qmodOutput": "darth_maul_rust.qmod"
+    "qmodOutput": "veckit.qmod"
   },
   "dependencies": [
     {
       "id": "bs-cordl",
-      "versionRange": "^4008.0.0",
+      "versionRange": "^4200.0.0",
       "additionalData": {
         "includeQmod": false,
         "private": true
       }
-    },
-    {
-      "id": "bsml",
-      "versionRange": "^0.4.55",
-      "additionalData": {}
-    },
-    {
-      "id": "metacore",
-      "versionRange": "^1.6.2",
-      "additionalData": {}
     },
     {
       "id": "custom-types",
