@@ -1,5 +1,5 @@
 [package]
-name = "darth_maul_rust"
+name = "veckit"
 version = "0.1.0"
 edition = "2024"
 rust-version = "1.90"
@@ -32,23 +32,8 @@ quest_hook = { git = "https://github.com/Fernthedev/quest-hook-rs.git", features
 # quest_hook = { path = "../quest-hook-rs", features = ["il2cpp_v31"]}
 tracing = "*"
 # bs_cordl = { path = "./codegen-rs", features = [
-bs_cordl = { git = "https://github.com/QuestPackageManager/bs-cordl-rust.git", features = [
-    "UnityEngine+GameObject",
-    "UnityEngine+Color",
-    "BeatmapObjectSpawnController",
-    "NoteData",
-    "SliderData",
-    "BeatmapDataItem",
-    "PlayerTransforms",
-    "SaberClashEffect",
-    "HapticFeedbackManager",
-    "StandardLevelGameplayManager",
-    "GameplaySetupViewController",
-    "StandardLevelScenesTransitionSetupDataSO",
-    "IReadonlyBeatmapData",
-] }
+bs_cordl = { git = "https://github.com/QuestPackageManager/bs-cordl-rust", tag = "v4200.0.0" }
 serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0"
 anyhow = { version = "1.0", features = ["backtrace"] }
 
 # https://github.com/Hpmason/retour-rs/issues/69
@@ -57,7 +42,6 @@ retour = { git = "https://github.com/workingjubilee/hpmason-retour-rs.git", bran
 
 # [patch."https://github.com/Fernthedev/quest-hook-rs.git"]
 # quest_hook = { path = "../quest-hook-rs" }
-
 
 [build-dependencies]
 cc = { version = "1.2", features = ["parallel"] }
